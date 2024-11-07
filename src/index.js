@@ -6,7 +6,7 @@ const resolvers = require('./resolvers/productResolver');
 
 const startServer = async () => {
   // Conectar a MongoDB
-  await mongoose.connect('mongodb+srv://iarjona:Isarca2010X@clusterisarvi.7txs2.mongodb.net/?retryWrites=true&w=majority&appName=ClusterIsarvi');
+  await mongoose.connect('mongodb+srv://jacatorresre:admin@cluster0.4bnuo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0');
   
   const server = new ApolloServer({ typeDefs, resolvers });
   
