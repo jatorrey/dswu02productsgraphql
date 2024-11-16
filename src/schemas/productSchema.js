@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server');
 
-const typeDefs = gql`
+const typeDefsProducts = gql`
   enum Category {
     ELECTRONICS
     CLOTHING
@@ -53,4 +53,4 @@ const typeDefs = gql`
   }
 `;
 
-module.exports = typeDefs;
+module.exports = typeDefsProducts;

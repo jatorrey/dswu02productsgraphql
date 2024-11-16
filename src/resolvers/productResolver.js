@@ -1,6 +1,6 @@
 const productService = require('../services/productService');
 
-const resolvers = {
+const productResolvers = {
   Query: {
     products: async () => await productService.getProducts(),
   },
@@ -11,4 +11,4 @@ const resolvers = {
   },
 };
 
-module.exports = resolvers;
+module.exports = productResolvers;
