@@ -1,19 +1,42 @@
 const { gql } = require('apollo-server');
 
 const typeDefsUser = gql`
+    type Address {
+        street: String
+        exterior: String
+        interior: String
+        neighborhood: String
+        city: String
+        municipality: String
+        zip: String!
+        state: String
+        country: String
+    }
+
+    input AddressInput {
+        street: String
+        exterior: String
+        interior: String
+        neighborhood: String
+        city: String
+        municipality: String
+        zip: String!
+        state: String
+        country: String
+    }
+
     type User {
         _id: ID!
-        facturapiid: String!
         rfc: String!
         name: String!
         email: String!
         password: String!
-        address: String!
-        zip: String!
+        address: Address!
         phone: String!
-        createdAt: String!
+        createdAt: String
         role: String!
-        paymentMethod: String!
+        paymentMethod: [String!]!
+        facturapiid: String!
     }
 
     type Query {
@@ -22,33 +45,32 @@ const typeDefsUser = gql`
 
     type Mutation {
         createUser(
-            facturapiId: String!,
-            rfc: String!,
-            name: String!,
-            email: String!,
-            password: String!,
-            address: String!,
-            zip: String!,
-            phone: String!,
-            role: String!,
-            paymentMethod: String
-        ): User
+            rfc: String!
+            name: String!
+            email: String!
+            password: String!
+            address: AddressInput!
+            phone: String!
+            role: String
+            paymentMethod: [String!]
+            facturapiid: String
+        ): User!
 
         updateUser(
-            _id: ID!,
-            facturapiId: String,
-            rfc: String,
-            name: String,
-            email: String,
-            password: String,
-            address: String,
-            zip: String,
-            phone: String,
-            role: String,
-            paymentMethod: String
-        ): User
+            _id: ID!
+            facturapiId: String
+            rfc: String
+            name: String
+            email: String
+            password: String
+            address: AddressInput
+            phone: String
+            role: String
+            paymentMethod: [String!]
+            facturapiid: String
+        ): User!
 
-        deleteUser(_id: ID!): User
+        deleteUser(_id: ID!): User!
     }
 `;
 
