@@ -1,5 +1,5 @@
 const Product = require('../models/productModel');
-const facturapi = require('../apis/facturapi');
+const facturapi = require('../apis/facturapi/product');
 
 const productService = {
   getProducts: async () => await Product.find(),
