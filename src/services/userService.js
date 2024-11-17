@@ -1,5 +1,5 @@
 const User = require('../models/userModel');
-const facturapi = require('../apis/facturapi/product');
+const facturapi = require('../apis/facturapi/user');
 
 const userService = {
     getUsers: async () => await User.find(),
