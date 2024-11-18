@@ -11,9 +11,13 @@ const productResolvers = require('./resolvers/productResolver');
 const typeDefsUsers = require('./schemas/userSchema');
 const userResolvers = require('./resolvers/userResolver');
 
+//Archivos de carrito
+const typeDefsShoppingCart = require('./schemas/shoppingcartSchema');
+const shoppingcartResolvers = require('./resolvers/shoppingcartResolver');
+
 //Uniendo archivos
-const typeDefs = mergeTypeDefs([typeDefsProducts, typeDefsUsers]);
-const resolvers = mergeResolvers([productResolvers, userResolvers]);
+const typeDefs = mergeTypeDefs([typeDefsProducts, typeDefsUsers, typeDefsShoppingCart]);
+const resolvers = mergeResolvers([productResolvers, userResolvers, shoppingcartResolvers]);
 
 const startServer = async () => {
   // Conectar a MongoDB
